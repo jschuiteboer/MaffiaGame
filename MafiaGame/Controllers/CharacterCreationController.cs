@@ -19,7 +19,7 @@ namespace MafiaGame.Controllers
             }
             else
             {
-                return Redirect("/MainGame");
+                return RedirectToAction(null, "MainGame");
             }
         }
 

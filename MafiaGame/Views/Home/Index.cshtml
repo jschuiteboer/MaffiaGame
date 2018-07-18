@@ -3,7 +3,6 @@
 }
 
 <div class="jumbotron">
-    <h1>Mafiagame</h1>
     <p class="lead">Click here to start a new game.</p>
-    <p>@Html.ActionLink("Start new game", "Index", "CharacterCreation", new { area = "" }, new { @class = "btn btn-primary btn-lg" })</p>
+    @Html.ActionLink("Start new game", "Index", "CharacterCreation", new { area = "" }, new { @class = "btn btn-primary btn-lg" })
 </div>
