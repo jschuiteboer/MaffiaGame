@@ -1,5 +1,4 @@
 ﻿using MafiaGame.ViewModels;
-using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace MafiaGame.Controllers
@@ -10,8 +9,7 @@ namespace MafiaGame.Controllers
         {
             return View(new CharacterCreationViewModel());
         }
-
-        // TODO: show error messages
+        
         [HttpPost]
         public ActionResult Index(CharacterCreationViewModel model)
         {
@@ -21,9 +19,7 @@ namespace MafiaGame.Controllers
             }
             else
             {
-                //TODO: process model variables
-
-                return View(model);
+                return Redirect("/MainGame");
             }
         }
 
