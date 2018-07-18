@@ -184,6 +184,7 @@
     <Compile Include="Services\MapService.cs" />
     <Compile Include="Services\NPCService.cs" />
     <Compile Include="Services\PlayerService.cs" />
+    <Compile Include="ViewModels\CharacterCreationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

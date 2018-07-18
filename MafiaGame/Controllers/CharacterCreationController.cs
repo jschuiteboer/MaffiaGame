@@ -1,7 +1,5 @@
-﻿using System;
+﻿using MafiaGame.ViewModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MafiaGame.Controllers
@@ -10,7 +8,25 @@ namespace MafiaGame.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new CharacterCreationViewModel());
         }
+
+        // TODO: show error messages
+        [HttpPost]
+        public ActionResult Index(CharacterCreationViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return View(model);
+            }
+            else
+            {
+                //TODO: process model variables
+
+                return View(model);
+            }
+        }
+
+        
     }
 }
