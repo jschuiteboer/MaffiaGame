@@ -10,6 +10,7 @@
         <label for="nameInput" class="col-sm-2 control-label">Name</label>
         <div class="col-sm-10">
             @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-warning" })
         </div>
     </div>
 
@@ -22,6 +23,7 @@
                 "Select",
                 new { @class = "form-control" }
             )
+            @Html.ValidationMessageFor(m => m.SelectedGender, null, new { @class = "text-warning" })
         </div>
     </div>
 
@@ -34,6 +36,7 @@
                 "Select",
                 new { @class = "form-control" }
             )
+            @Html.ValidationMessageFor(m => m.SelectedStartingCity, null, new { @class = "text-warning" })
         </div>
     </div>
 
