@@ -1,8 +1,10 @@
-﻿@{
-    ViewBag.Title = "Mafiagame";
-}
+﻿@using MafiaGame.Models
 
-<h1>Name: @ViewData["name"]</h1>
+@{
+    ViewBag.Title = "Mafiagame";
+
+    var player = (PlayerEntity) ViewData["player"];
+}
 
 <div class="row">
     <div class="mainbar col-md-8">
@@ -12,7 +14,7 @@
     </div>
     <div class="sidebar col-md-4">
         <div class="character-info">
-
+            <span>Name: @player.Name</span>
         </div>
     </div>
 </div>

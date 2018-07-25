@@ -13,11 +13,12 @@ namespace MafiaGame.Controllers
             this.PlayerService = playerService;
         }
 
+        //TODO: use viewmodel here
         public ActionResult Index()
         {
             PlayerEntity player = PlayerService.GetCurrent();
 
-            ViewData["name"] = player.Name;
+            ViewData["player"] = player;
 
             return View();
         }
