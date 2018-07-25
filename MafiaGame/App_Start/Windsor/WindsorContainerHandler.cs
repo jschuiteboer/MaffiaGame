@@ -10,7 +10,8 @@ namespace MafiaGame.App_Start
 
         public static void Setup()
         {
-            container = new WindsorContainer().Install(FromAssembly.This());
+            container = new WindsorContainer()
+                .Install(FromAssembly.This());
             
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container.Kernel));
         }

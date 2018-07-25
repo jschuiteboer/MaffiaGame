@@ -5,7 +5,8 @@ using System.Web;
 
 namespace MafiaGame.Services
 {
-    public class ItemService
+    public interface IMapService
     {
+
     }
 }
