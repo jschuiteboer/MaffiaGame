@@ -10,7 +10,7 @@ namespace MafiaGame.App_Start
         {
             container.Register(
                 Classes.FromThisAssembly()
-                    .InNamespace("MafiaGame.Services")
+                    .InNamespace("MafiaGame.Services.impl")
                     .WithServiceFirstInterface()
                     .LifestylePerWebRequest()
             );

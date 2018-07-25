@@ -16,7 +16,7 @@ namespace MafiaGame.ViewModels
         [Required]
         public string SelectedGender { get; set; }
 
-        public IEnumerable<SelectListItem> StartingCities { get; }
+        public IEnumerable<SelectListItem> StartingCities { get; set; }
 
         [Required]
         public string SelectedStartingCity { get; set; }
@@ -24,7 +24,6 @@ namespace MafiaGame.ViewModels
         public CharacterCreationViewModel()
         {
             this.GenderList = GetGenders();
-            this.StartingCities = GetStartingCities();
         }
 
         //TODO: move to service?
@@ -34,18 +33,6 @@ namespace MafiaGame.ViewModels
             {
                 new SelectListItem { Value = "male", Text = "Male" },
                 new SelectListItem { Value = "female", Text = "Female" },
-            };
-        }
-
-        //TODO: move to service?
-        private List<SelectListItem> GetStartingCities()
-        {
-            return new List<SelectListItem>
-            {
-                new SelectListItem { Value = "city 1", Text = "City 1" },
-                new SelectListItem { Value = "city 2", Text = "City 2" },
-                new SelectListItem { Value = "city 2", Text = "City 3" },
-                new SelectListItem { Value = "city 17", Text = "City 17" },
             };
         }
     }
