@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MafiaGame.Services
 {
-    public class NPCService
+    public interface INpcService
     {
     }
 }
