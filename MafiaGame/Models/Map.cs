@@ -6,9 +6,12 @@ namespace MafiaGame.Models
     {
         public IList<Tile> TileList { get; set; }
 
+        public Dictionary<Tile, Tile> TileLinks { get; set; }
+
         public Map()
         {
             this.TileList = new List<Tile>();
+            this.TileLinks = new Dictionary<Tile, Tile>();
         }
     }
 }
