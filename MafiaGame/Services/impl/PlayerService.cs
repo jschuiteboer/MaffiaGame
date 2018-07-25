@@ -1,7 +1,7 @@
 ﻿using MafiaGame.Models;
 using System.Web;
 
-namespace MafiaGame.Services
+namespace MafiaGame.Services.impl
 {
     public class PlayerService : IPlayerService
     {

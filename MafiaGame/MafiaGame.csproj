@@ -184,7 +184,10 @@
     <Compile Include="Models\World.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IItemService.cs" />
+    <Compile Include="Services\ICityService.cs" />
     <Compile Include="Services\IMapService.cs" />
+    <Compile Include="Services\impl\MapService.cs" />
+    <Compile Include="Services\impl\CityService.cs" />
     <Compile Include="Services\INpcService.cs" />
     <Compile Include="Services\IPlayerService.cs" />
     <Compile Include="Services\impl\PlayerService.cs" />
