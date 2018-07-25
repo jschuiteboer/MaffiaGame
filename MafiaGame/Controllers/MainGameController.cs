@@ -19,7 +19,6 @@ namespace MafiaGame.Controllers
             PlayerEntity player = _playerService.GetCurrent();
 
             ViewData["player"] = player;
-            ViewData["map"] = player.City.Map;
 
             return View();
         }
