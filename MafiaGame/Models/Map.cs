@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace MafiaGame.Models
 {
     public class Map
     {
+        public IList<Tile> TileList { get; set; }
+
+        public Map()
+        {
+            this.TileList = new List<Tile>();
+        }
     }
 }

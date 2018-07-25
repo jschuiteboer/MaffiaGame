@@ -1,8 +1,8 @@
-﻿<svg viewBox="0 0 100 66" xmlns="http://www.w3.org/2000/svg">
-    <line x1="50" y1="50" x2="60" y2="10" stroke="#555" />
-    <line x1="50" y1="50" x2="30" y2="20" stroke="#555" />
+﻿@model MafiaGame.Models.Map
 
-    <circle cx="50" cy="50" r="5" />
-    <circle cx="30" cy="20" r="5" />
-    <circle cx="60" cy="10" r="5" />
+<svg viewBox="0 0 100 66" xmlns="http://www.w3.org/2000/svg">
+    @foreach (var tile in Model.TileList)
+    {
+        <circle cx="@tile.Position.X" cy="@tile.Position.Y" r="5" />
+    }
 </svg>
