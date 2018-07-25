@@ -227,6 +227,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CharacterCreation\Index.cshtml" />
     <Content Include="Views\MainGame\Index.cshtml" />
+    <Content Include="Views\MainGame\_Map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

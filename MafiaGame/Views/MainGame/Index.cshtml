@@ -4,12 +4,13 @@
     ViewBag.Title = "Mafiagame";
 
     var player = (PlayerEntity) ViewData["player"];
+    var map = (Map) ViewData["map"];
 }
 
 <div class="row">
     <div class="mainbar col-md-8">
         <div class="map">
-
+            @Html.Partial("_Map", map)
         </div>
     </div>
     <div class="sidebar col-md-4">
