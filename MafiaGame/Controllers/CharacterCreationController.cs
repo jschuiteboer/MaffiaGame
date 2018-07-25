@@ -8,14 +8,14 @@ namespace MafiaGame.Controllers
 {
     public class CharacterCreationController : Controller
     {
-        private IPlayerService playerService;
+        private IPlayerService _playerService;
 
-        private ICityService cityService;
+        private ICityService _cityService;
 
         public CharacterCreationController(IPlayerService playerService, ICityService cityService)
         {
-            this.playerService = playerService;
-            this.cityService = cityService;
+            this._playerService = playerService;
+            this._cityService = cityService;
         }
 
         public ActionResult Index()
@@ -36,8 +36,9 @@ namespace MafiaGame.Controllers
             }
             else
             {
-                PlayerEntity player = this.playerService.GetCurrent();
+                PlayerEntity player = this._playerService.GetCurrent();
                 player.Name = model.Name;
+                player.City = this._cityService.GetCityFromName(model.SelectedStartingCity);
 
                 return RedirectToAction(null, "MainGame");
             }
@@ -46,7 +47,7 @@ namespace MafiaGame.Controllers
         private List<SelectListItem> GetStartingCities()
         {
             var startingCities = new List<SelectListItem>();
-            var cityNames = this.cityService.GetCityNames();
+            var cityNames = this._cityService.GetCityNames();
 
             foreach(var name in cityNames)
             {

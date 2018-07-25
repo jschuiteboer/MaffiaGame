@@ -8,5 +8,7 @@ namespace MafiaGame.Models
     public class PlayerEntity : Entity
     {
         public string Name { get; set; }
+
+        public City City { get; set; }
     }
 }
