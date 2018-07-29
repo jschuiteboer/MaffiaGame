@@ -22,3 +22,27 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.map .tile {
+    fill: #1d1d1d;
+}
+
+.map .tile[data-tile-type=Store] {
+    fill: #ffd800;
+}
+
+.map .tile[data-tile-type=PoliceStation] {
+    fill: #0026ff;
+}
+
+.map .tile[data-tile-type=Bank] {
+    fill: #4cff00;
+}
+
+.map .tile[data-tile-type=Airport] {
+    fill: #ff0000;
+}
+
+.map .tile-link {
+    stroke: #000;
+}

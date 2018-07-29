@@ -4,17 +4,19 @@
     @foreach (var link in Model.TileLinks)
     {
         <line
+              class="tile-link"
               x1="@link.Key.Position.X"
               y1="@link.Key.Position.Y"
               x2="@link.Value.Position.X"
               y2="@link.Value.Position.Y"
-              stroke="#555"
+              stroke="#000"
               />
     }
 
     @foreach (var tile in Model.TileList)
     {
         <circle
+                class="tile"
                 cx="@tile.Position.X"
                 cy="@tile.Position.Y"
                 r="5"
