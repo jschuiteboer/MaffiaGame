@@ -1,4 +1,5 @@
 ﻿using MafiaGame.Models;
+using MafiaGame.Models.Tiles;
 using System;
 using System.Windows;
 
@@ -14,7 +15,7 @@ namespace MafiaGame.Services.impl
             int numTiles = random.Next(3, 10);
             for (int i = 0; i < numTiles; ++i)
             {
-                map.TileList.Add(new Tile()
+                map.TileList.Add(new Store()
                 {
                     Position = new Point(random.Next(0, 100), random.Next(0, 60))
                 });

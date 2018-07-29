@@ -2,7 +2,7 @@
 
 namespace MafiaGame.Models
 {
-    public class Tile
+    public abstract class Tile
     {
         public Point Position { get; set; }
     }

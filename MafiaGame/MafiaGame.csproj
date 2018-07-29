@@ -169,18 +169,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\Tiles\Airport.cs" />
+    <Compile Include="Models\Items\Car.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ItemStack.cs" />
     <Compile Include="Models\Map.cs" />
-    <Compile Include="Models\Money.cs" />
+    <Compile Include="Models\Items\Money.cs" />
     <Compile Include="Models\PlayerEntity.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\NPCEntity.cs" />
+    <Compile Include="Models\Tiles\Bank.cs" />
     <Compile Include="Models\Rank.cs" />
+    <Compile Include="Models\Tiles\PoliceStation.cs" />
+    <Compile Include="Models\Tiles\Store.cs" />
     <Compile Include="Models\Tile.cs" />
-    <Compile Include="Models\Weapon.cs" />
+    <Compile Include="Models\Items\Weapon.cs" />
     <Compile Include="Models\World.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IItemService.cs" />
