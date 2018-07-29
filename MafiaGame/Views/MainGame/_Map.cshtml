@@ -1,6 +1,6 @@
 ﻿@model MafiaGame.Models.Map
 
-<svg viewBox="0 0 100 66" xmlns="http://www.w3.org/2000/svg">
+<svg class="map" viewBox="0 0 100 66" xmlns="http://www.w3.org/2000/svg">
     @foreach (var link in Model.TileLinks)
     {
         <line x1="@link.Key.Position.X" y1="@link.Key.Position.Y" x2="@link.Value.Position.X" y2="@link.Value.Position.Y" stroke="#555" />
