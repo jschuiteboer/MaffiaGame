@@ -7,6 +7,13 @@ namespace MafiaGame.Services.impl
 {
     public class MapService : IMapService
     {
+        private INameGenService _nameGenService;
+
+        public MapService(INameGenService nameGenService)
+        {
+            this._nameGenService = nameGenService;
+        }
+
         public Map CreateMapFromSeed(int seed)
         {
             Map map = new Map();
@@ -20,7 +27,7 @@ namespace MafiaGame.Services.impl
                 {
                     // TODO: remove magic numbers (map size)
                     Position = new Point(random.Next(0, 100), random.Next(0, 60)),
-                    Name = "Some randomly generated store name",
+                    Name = _nameGenService.GetNextNameForAStore(),
                 });
             }
 
@@ -32,7 +39,7 @@ namespace MafiaGame.Services.impl
                 {
                     // TODO: remove magic numbers (map size)
                     Position = new Point(random.Next(0, 100), random.Next(0, 60)),
-                    Name = "Some randomly generated bank name",
+                    Name = _nameGenService.GetNextNameForABank(),
                 });
             }
 
@@ -44,7 +51,7 @@ namespace MafiaGame.Services.impl
                 {
                     // TODO: remove magic numbers (map size)
                     Position = new Point(random.Next(0, 100), random.Next(0, 60)),
-                    Name = "Some randomly generated police station name",
+                    Name = _nameGenService.GetNextNameForAPoliceStation(),
                 });
             }
 
@@ -53,7 +60,7 @@ namespace MafiaGame.Services.impl
             {
                 // TODO: remove magic numbers (map size)
                 Position = new Point(random.Next(0, 100), random.Next(0, 60)),
-                Name = "Some randomly generated airport name",
+                Name = _nameGenService.GetNextNameForAnAirport(),
             });
 
             // add tile links
