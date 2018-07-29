@@ -2,8 +2,12 @@
     tile: function() {
         this.each(function() {
             this.getName = function() {
-                return 'the name of the tile';
+                return $(this).data('tile-name');
             };
+
+            this.getType = function() {
+                return $(this).data('tile-type');
+            }
         });
 
         return this;

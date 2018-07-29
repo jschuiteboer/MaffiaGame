@@ -17,7 +17,8 @@ namespace MafiaGame.Services.impl
             {
                 map.TileList.Add(new Store()
                 {
-                    Position = new Point(random.Next(0, 100), random.Next(0, 60))
+                    Position = new Point(random.Next(0, 100), random.Next(0, 60)),
+                    Name = "Some randomly generated name",
                 });
             }
 
