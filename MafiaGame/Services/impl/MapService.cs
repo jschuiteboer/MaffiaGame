@@ -16,6 +16,11 @@ namespace MafiaGame.Services.impl
 
         public Map CreateMapFromSeed(int seed)
         {
+            const int minX = -50;
+            const int maxX = 50;
+            const int minY = -50;
+            const int maxY = 50;
+
             Map map = new Map();
             Random random = new Random(seed);
 
@@ -25,8 +30,7 @@ namespace MafiaGame.Services.impl
             {
                 map.TileList.Add(new Store()
                 {
-                    // TODO: remove magic numbers (map size)
-                    Position = new Point(random.Next(0, 100), random.Next(0, 60)),
+                    Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForAStore(),
                 });
             }
@@ -37,8 +41,7 @@ namespace MafiaGame.Services.impl
             {
                 map.TileList.Add(new Bank()
                 {
-                    // TODO: remove magic numbers (map size)
-                    Position = new Point(random.Next(0, 100), random.Next(0, 60)),
+                    Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForABank(),
                 });
             }
@@ -49,8 +52,7 @@ namespace MafiaGame.Services.impl
             {
                 map.TileList.Add(new PoliceStation()
                 {
-                    // TODO: remove magic numbers (map size)
-                    Position = new Point(random.Next(0, 100), random.Next(0, 60)),
+                    Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForAPoliceStation(),
                 });
             }
@@ -58,8 +60,7 @@ namespace MafiaGame.Services.impl
             // add airport tiles
             map.TileList.Add(new Airport()
             {
-                // TODO: remove magic numbers (map size)
-                Position = new Point(random.Next(0, 100), random.Next(0, 60)),
+                Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                 Name = _nameGenService.GetNextNameForAnAirport(),
             });
 

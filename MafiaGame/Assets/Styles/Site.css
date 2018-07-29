@@ -23,26 +23,30 @@ textarea {
     max-width: 280px;
 }
 
+.map {
+    background: #303030;
+}
+
 .map .tile {
     fill: #1d1d1d;
 }
 
 .map .tile[data-tile-type=Store] {
-    fill: #ffd800;
+    fill: #f6e795;
 }
 
 .map .tile[data-tile-type=PoliceStation] {
-    fill: #0026ff;
+    fill: #4760f2;
 }
 
 .map .tile[data-tile-type=Bank] {
-    fill: #4cff00;
+    fill: #a7fa83;
 }
 
 .map .tile[data-tile-type=Airport] {
-    fill: #ff0000;
+    fill: #ff6464;
 }
 
 .map .tile-link {
-    stroke: #000;
+    stroke: #b2b2b2;
 }
