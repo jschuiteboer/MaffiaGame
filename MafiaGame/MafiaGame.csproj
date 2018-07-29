@@ -198,32 +198,32 @@
     <Compile Include="ViewModels\CharacterCreationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Styles\vendor\bootstrap-theme.css" />
-    <Content Include="Assets\Styles\vendor\bootstrap-theme.min.css" />
-    <Content Include="Assets\Styles\vendor\bootstrap.css" />
-    <Content Include="Assets\Styles\vendor\bootstrap.min.css" />
+    <Content Include="Assets\Vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Assets\Vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Assets\Vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Assets\Vendor\bootstrap\css\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="Assets\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\Vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Assets\Styles\Site.css" />
     <Content Include="Assets\Images\avatar.png" />
     <Content Include="Assets\Scripts\Tile.js" />
-    <Content Include="Assets\Scripts\vendor\bootstrap.js" />
-    <Content Include="Assets\Scripts\vendor\bootstrap.min.js" />
+    <Content Include="Assets\Vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\Vendor\bootstrap\js\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Assets\Scripts\vendor\jquery-3.3.1.intellisense.js" />
-    <Content Include="Assets\Scripts\vendor\jquery-3.3.1.js" />
-    <Content Include="Assets\Scripts\vendor\jquery-3.3.1.min.js" />
-    <Content Include="Assets\Scripts\vendor\jquery-3.3.1.slim.js" />
-    <Content Include="Assets\Scripts\vendor\jquery-3.3.1.slim.min.js" />
-    <None Include="Assets\Scripts\vendor\jquery.validate-vsdoc.js" />
-    <Content Include="Assets\Scripts\vendor\jquery.validate.js" />
-    <Content Include="Assets\Scripts\vendor\jquery.validate.min.js" />
-    <Content Include="Assets\Scripts\vendor\jquery.validate.unobtrusive.js" />
-    <Content Include="Assets\Scripts\vendor\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Assets\Scripts\vendor\modernizr-2.8.3.js" />
+    <None Include="Assets\Vendor\jquery\jquery-3.3.1.intellisense.js" />
+    <Content Include="Assets\Vendor\jquery\jquery-3.3.1.js" />
+    <Content Include="Assets\Vendor\jquery\jquery-3.3.1.min.js" />
+    <Content Include="Assets\Vendor\jquery\jquery-3.3.1.slim.js" />
+    <Content Include="Assets\Vendor\jquery\jquery-3.3.1.slim.min.js" />
+    <None Include="Assets\Vendor\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Assets\Vendor\jquery\jquery.validate.js" />
+    <Content Include="Assets\Vendor\jquery\jquery.validate.min.js" />
+    <Content Include="Assets\Vendor\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Assets\Vendor\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Assets\Vendor\modernizr-2.8.3.js" />
     <Content Include="Assets\Scripts\script.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -246,17 +246,17 @@
     <Folder Include="Views\Inventory\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Assets\Fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Assets\Fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Assets\Fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Assets\Styles\vendor\bootstrap.min.css.map" />
-    <Content Include="Assets\Styles\vendor\bootstrap.css.map" />
-    <Content Include="Assets\Styles\vendor\bootstrap-theme.min.css.map" />
-    <Content Include="Assets\Styles\vendor\bootstrap-theme.css.map" />
+    <Content Include="Assets\Vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\Vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\Vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\Vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\Vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Assets\Vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Assets\Vendor\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Assets\Vendor\bootstrap\css\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Assets\Scripts\vendor\jquery-3.3.1.slim.min.map" />
-    <Content Include="Assets\Scripts\vendor\jquery-3.3.1.min.map" />
+    <Content Include="Assets\Vendor\jquery\jquery-3.3.1.slim.min.map" />
+    <Content Include="Assets\Vendor\jquery\jquery-3.3.1.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

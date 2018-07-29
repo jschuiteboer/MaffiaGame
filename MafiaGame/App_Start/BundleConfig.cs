@@ -19,13 +19,13 @@ namespace MafiaGame
             bundles.Add(new ScriptBundle("~/scripts/vendor").Include(
                 // Use the development version of Modernizr to develop with and learn from. Then, when you're
                 // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-                "~/Assets/Scripts/vendor/modernizr-*",
-                "~/Assets/Scripts/vendor/jquery-{version}.js",
-                "~/Assets/Scripts/vendor/jquery.validate*",
-                "~/Assets/Scripts/vendor/bootstrap.js"));
+                "~/Assets/Vendor/modernizr-*",
+                "~/Assets/Vendor/jquery/jquery-{version}.js",
+                "~/Assets/Vendor/jquery/jquery.validate*",
+                "~/Assets/Vendor/bootstrap/js/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/styles/vendor").Include(
-                "~/Assets/Styles/vendor/bootstrap.css"));
+                "~/Assets/Vendor/bootstrap/css/bootstrap.css"));
         }
     }
 }
