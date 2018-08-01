@@ -35,6 +35,7 @@ namespace MafiaGame.Services.impl
                     Name = _nameGenService.GetNextNameForAStore(),
                     Activities = new Dictionary<string, string> {
                         { "rob", "/activities/store/rob" },
+                        { "buy something", "/activities/store/buy" },
                     }
                 });
             }

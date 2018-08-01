@@ -31,19 +31,19 @@ textarea {
     fill: #1d1d1d;
 }
 
-.map .tile[data-tile-type=Store] {
+.map .tile.Store {
     fill: #f6e795;
 }
 
-.map .tile[data-tile-type=PoliceStation] {
+.map .tile.PoliceStation {
     fill: #4760f2;
 }
 
-.map .tile[data-tile-type=Bank] {
+.map .tile.Bank {
     fill: #a7fa83;
 }
 
-.map .tile[data-tile-type=Airport] {
+.map .tile.Airport {
     fill: #ff6464;
 }
 

@@ -1,32 +1,29 @@
-﻿var tileInfoPanel = $('#tile-info-panel');
+﻿function showTileInfo(element) {
+    var panel = $('#tile-info-panel');
+    var tile = $(element).data('tile');
+    var activitiesList = panel.find('#activities');
+    var listItem = activitiesList.find('li').first();
 
-function showTileInfo(tile) {
-    var properties = {
-        name: tile.getName(),
-        type: tile.getType(),
+    panel.removeClass('hidden');
+
+    panel.find('#name').text(tile.Name);
+    panel.find('#type').text(tile.Type);
+
+    activitiesList.empty();
+
+    for(var activity in tile.Activities) {
+        listItem.find('#activity')
+            .text(activity)
+            .attr("href", tile.Activities[activity]);
+
+        listItem.clone().appendTo(activitiesList);
     }
-
-    var container = tileInfoPanel.find('#row-container');
-    var template = tileInfoPanel.find('#row-template').html();
-
-    container.empty();
-
-    $.each(properties, function(k, v) {
-        var row = $(template);
-
-        row.find('#label').html(k);
-        row.find('#value').html(v);
-
-        container.append(row);
-    });
 }
 
 $(function() {
-    $('#map circle')
-        .tile()
-        .click(function() {
-            showTileInfo(this);
-        });
+    $('#map circle').click(function() {
+        showTileInfo(this);
+    });
     
     $('#map').on('mousemove', function(e) {
         if(e.buttons) {

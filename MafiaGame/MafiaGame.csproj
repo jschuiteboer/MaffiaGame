@@ -205,7 +205,6 @@
     <Content Include="Global.asax" />
     <Content Include="Assets\Styles\Site.css" />
     <Content Include="Assets\Images\avatar.png" />
-    <Content Include="Assets\Scripts\Tile.js" />
     <Content Include="Assets\Vendor\bootstrap\js\bootstrap.js" />
     <Content Include="Assets\Vendor\bootstrap\js\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
