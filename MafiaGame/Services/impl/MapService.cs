@@ -1,5 +1,6 @@
 ﻿using MafiaGame.Models;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace MafiaGame.Services.impl
@@ -32,6 +33,9 @@ namespace MafiaGame.Services.impl
                     Type = "Store",
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForAStore(),
+                    Activities = new Dictionary<string, string> {
+                        { "rob", "/activities/store/rob" },
+                    }
                 });
             }
 
@@ -44,6 +48,9 @@ namespace MafiaGame.Services.impl
                     Type = "Bank",
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForABank(),
+                    Activities = new Dictionary<string, string> {
+                        { "rob", "/activities/bank/rob" },
+                    }
                 });
             }
 
@@ -56,6 +63,9 @@ namespace MafiaGame.Services.impl
                     Type = "PoliceStation",
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForAPoliceStation(),
+                    Activities = new Dictionary<string, string> {
+                        { "bribe the cops", "/activities/policestation/bribe" },
+                    }
                 });
             }
 
@@ -65,6 +75,9 @@ namespace MafiaGame.Services.impl
                 Type = "Airport",
                 Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                 Name = _nameGenService.GetNextNameForAnAirport(),
+                Activities = new Dictionary<string, string> {
+                    { "travel", "/activities/airport/travel" },
+                }
             });
 
             // add tile links

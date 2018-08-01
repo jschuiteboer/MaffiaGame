@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace MafiaGame.Models
 {
@@ -9,5 +10,7 @@ namespace MafiaGame.Models
         public string Name { get; set; }
 
         public string Type { get; set; }
+
+        public Dictionary<string, string> Activities { get; set; }
     }
 }
