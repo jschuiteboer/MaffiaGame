@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace MafiaGame
@@ -14,8 +10,16 @@ namespace MafiaGame
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Store",
+                url: "activities/store/{action}",
+                defaults: new { controller = "Store", id = UrlParameter.Optional }
+            );
+
+            routes.IgnoreRoute("{controller}/{action}/Index");
+
+            routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "{controller}/{action}/",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
