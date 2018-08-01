@@ -1,17 +1,16 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace MafiaGame.Models
 {
-    public abstract class Tile
+    public class Tile
     {
         public Point Position { get; set; }
 
         public string Name { get; set; }
 
-        public string TypeName {
-            get {
-                return GetType().Name;
-            }
-        }
+        public string Type { get; set; }
+
+        public Dictionary<string, string> Activities { get; set; }
     }
 }

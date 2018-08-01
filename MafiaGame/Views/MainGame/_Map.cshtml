@@ -10,19 +10,18 @@
             x2="@link.Value.Position.X"
             y2="@link.Value.Position.Y"
             stroke="#000"
-            stroke-width="3";
-            />
+            stroke-width="3"
+        />
     }
 
     @foreach (var tile in Model.TileList)
     {
         <circle
-            class="tile"
+            class="tile @tile.Type"
             cx="@tile.Position.X"
             cy="@tile.Position.Y"
             r="3"
-            data-tile-name="@tile.Name"
-            data-tile-type="@tile.TypeName"
-            />
+            data-tile="@Newtonsoft.Json.JsonConvert.SerializeObject(tile)"
+        />
     }
 </svg>

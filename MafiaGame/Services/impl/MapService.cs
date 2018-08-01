@@ -1,6 +1,6 @@
 ﻿using MafiaGame.Models;
-using MafiaGame.Models.Tiles;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace MafiaGame.Services.impl
@@ -24,44 +24,61 @@ namespace MafiaGame.Services.impl
             Map map = new Map();
             Random random = new Random(seed);
 
-            // add stores tiles
+            // add store tiles
             int numStores = random.Next(3, 10);
             for (int i = 0; i < numStores; ++i)
             {
-                map.TileList.Add(new Store()
+                map.TileList.Add(new Tile()
                 {
+                    Type = "Store",
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForAStore(),
+                    Activities = new Dictionary<string, string> {
+                        { "rob", "/activities/store/rob" },
+                        { "buy something", "/activities/store/buy" },
+                    }
                 });
             }
 
-            // add stores tiles
+            // add bank tiles
             int numBanks = random.Next(1, 4);
             for (int i = 0; i < numBanks; ++i)
             {
-                map.TileList.Add(new Bank()
+                map.TileList.Add(new Tile()
                 {
+                    Type = "Bank",
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForABank(),
+                    Activities = new Dictionary<string, string> {
+                        { "rob", "/activities/bank/rob" },
+                    }
                 });
             }
 
-            // add police stations tiles
+            // add police station tiles
             int numPoliceStations = 2;
             for (int i = 0; i < numPoliceStations; ++i)
             {
-                map.TileList.Add(new PoliceStation()
+                map.TileList.Add(new Tile()
                 {
+                    Type = "PoliceStation",
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForAPoliceStation(),
+                    Activities = new Dictionary<string, string> {
+                        { "bribe the cops", "/activities/policestation/bribe" },
+                    }
                 });
             }
 
             // add airport tiles
-            map.TileList.Add(new Airport()
+            map.TileList.Add(new Tile()
             {
+                Type = "Airport",
                 Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                 Name = _nameGenService.GetNextNameForAnAirport(),
+                Activities = new Dictionary<string, string> {
+                    { "travel", "/activities/airport/travel" },
+                }
             });
 
             // add tile links
