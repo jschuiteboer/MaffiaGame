@@ -195,6 +195,7 @@
     <Compile Include="Services\INpcService.cs" />
     <Compile Include="Services\IPlayerService.cs" />
     <Compile Include="Services\impl\PlayerService.cs" />
+    <Compile Include="ViewModels\AirportViewModel.cs" />
     <Compile Include="ViewModels\CharacterCreationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
