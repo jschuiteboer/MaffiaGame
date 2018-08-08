@@ -50,3 +50,8 @@ textarea {
 .map .tile-link {
     stroke: #b2b2b2;
 }
+
+.map .tile.current {
+    stroke: white;
+    stroke-width: 1;
+}
