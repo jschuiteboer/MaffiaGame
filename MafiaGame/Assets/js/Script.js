@@ -21,7 +21,7 @@
 }
 
 $(function() {
-    $('#map circle').click(function() {
+    $('#map .tile').click(function() {
         showTileInfo(this);
     });
     
@@ -36,4 +36,6 @@ $(function() {
             $(this).attr('viewBox', viewBox.join(' '));
         }
     });
+
+    showTileInfo($('#map .tile.current').first());
 });
