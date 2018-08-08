@@ -22,22 +22,22 @@ namespace MafiaGame.Services.impl
         public void InitPlayer(string playerName, string startingCity)
         {
             City city = this._cityService.GetCityFromName(startingCity);
-            Tile tile = this._cityService.GetAirportTile(city);
 
             var player = new PlayerEntity
             {
                 Name = playerName,
-                City = city,
-                CurrentTile = tile,
             };
+
+            this.TravelToCity(player, city);
 
             HttpSessionStateBase session = new HttpSessionStateWrapper(HttpContext.Current.Session);
             session["playerEntity"] = player;
         }
 
-        public void TravelToCity(City city)
+        public void TravelToCity(PlayerEntity player, City city)
         {
-            throw new System.NotImplementedException();
+            player.City = city;
+            player.CurrentTile = this._cityService.GetAirportTile(city);
         }
     }
 }

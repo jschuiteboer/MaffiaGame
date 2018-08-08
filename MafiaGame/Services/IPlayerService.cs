@@ -6,7 +6,7 @@ namespace MafiaGame.Services
     {
         PlayerEntity GetCurrent();
 
-        void TravelToCity(City city);
+        void TravelToCity(PlayerEntity player, City city);
 
         void InitPlayer(string name, string selectedStartingCity);
     }
