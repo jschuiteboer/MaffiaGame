@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/styles/vendor")
     @Styles.Render("~/styles")
 </head>
 <body>
@@ -12,13 +11,8 @@
         <div class="page-header">
             <h1>@ViewBag.Title</h1>
         </div>
-
         @RenderBody()
     </div>
-
-    @Scripts.Render("~/scripts/vendor")
     @Scripts.Render("~/scripts")
-
-    @RenderSection("scripts", required: false)
 </body>
 </html>

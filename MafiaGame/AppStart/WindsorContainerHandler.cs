@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace MafiaGame
 {
-    public class WindsorContainerHandler
+    public static class WindsorContainerHandler
     {
         private static IWindsorContainer container;
 
