@@ -4,7 +4,7 @@ namespace MafiaGame.Models
 {
     public class Map
     {
-        public IList<Tile> TileList { get; set; }
+        public List<Tile> TileList { get; set; }
 
         public Dictionary<Tile, Tile> TileLinks { get; set; }
 

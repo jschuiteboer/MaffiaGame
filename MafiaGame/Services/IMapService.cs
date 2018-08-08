@@ -6,5 +6,7 @@ namespace MafiaGame.Services
     {
         // TODO: don't expose this method, Use GetMapForCity() instead
         Map CreateMapFromSeed(int seed);
+
+        Tile GetAirPortTile(Map map);
     }
 }

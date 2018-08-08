@@ -6,10 +6,14 @@ namespace MafiaGame.Services.impl
 {
     public class CityService : ICityService
     {
+        private IMapService _mapService;
+
         private List<City> _cities;
 
         public CityService(IMapService mapService)
         {
+            this._mapService = mapService;
+
             this._cities = new List<City> {
                 new City("Colcord", mapService.CreateMapFromSeed(234347)),
                 new City("Windstead", mapService.CreateMapFromSeed(2346234)),
@@ -19,7 +23,7 @@ namespace MafiaGame.Services.impl
                 new City("Richminster", mapService.CreateMapFromSeed(3457)),
             };
         }
-        
+
         public IReadOnlyCollection<City> GetCities()
         {
             return this._cities.AsReadOnly();
@@ -48,6 +52,11 @@ namespace MafiaGame.Services.impl
             connectedCities.Remove(city);
 
             return connectedCities;
+        }
+
+        public Tile GetAirportTile(City city)
+        {
+            return this._mapService.GetAirPortTile(city.Map);
         }
     }
 }

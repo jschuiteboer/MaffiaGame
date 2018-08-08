@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Mafiagame";
 
-    var player = (PlayerEntity) ViewData["player"];
+    var player = (PlayerEntity)ViewData["player"];
     var map = player.City.Map;
 }
 
@@ -15,7 +15,9 @@
                 <h3 class="panel-title">Map</h3>
             </div>
             <div class="panel-body">
-                @Html.Partial("_Map", map)
+                @Html.Partial("_Map", map, new ViewDataDictionary {
+                    { "playerPosition", player.CurrentTile },
+                })
             </div>
         </div>
 
