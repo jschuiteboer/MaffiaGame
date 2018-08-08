@@ -162,7 +162,8 @@
     <Compile Include="AppStart\WindsorContainerHandler.cs" />
     <Compile Include="AppStart\RouteConfig.cs" />
     <Compile Include="AppStart\Windsor\WindsorControllerFactory.cs" />
-    <Compile Include="Controllers\Activities\StoreController.cs" />
+    <Compile Include="Controllers\AirportController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\CharacterCreationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventoryController.cs" />
@@ -241,6 +242,7 @@
     <Content Include="Views\MainGame\Index.cshtml" />
     <Content Include="Views\MainGame\_Map.cshtml" />
     <Content Include="Views\Store\Rob.cshtml" />
+    <Content Include="Views\Airport\Travel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Inventory\" />

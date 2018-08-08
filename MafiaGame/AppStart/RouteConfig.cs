@@ -12,12 +12,6 @@ namespace MafiaGame
                 url: "{controller}/{action}",
                 defaults: new { controller = "Home", action = "Index" }
             );
-
-            routes.MapRoute(
-                name: null,
-                url: "activities/{controller}/{action}",
-                namespaces: new[] { "MafiaGame.Controllers.Activities" }
-            );
         }
     }
 }
