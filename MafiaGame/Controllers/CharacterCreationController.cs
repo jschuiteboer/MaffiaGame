@@ -1,7 +1,7 @@
 ﻿using MafiaGame.Models;
 using MafiaGame.Services;
+using MafiaGame.Util;
 using MafiaGame.ViewModels;
-using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace MafiaGame.Controllers
@@ -20,16 +20,12 @@ namespace MafiaGame.Controllers
 
         public ActionResult Index()
         {
-            return View(new CharacterCreationViewModel {
-                StartingCities = this.GetStartingCities(),
-            });
+            return View(new CharacterCreationViewModel());
         }
 
         [HttpPost]
         public ActionResult Index(CharacterCreationViewModel model)
         {
-            model.StartingCities = this.GetStartingCities();
-
             if (!this.ModelState.IsValid)
             {
                 return View(model);
@@ -44,17 +40,11 @@ namespace MafiaGame.Controllers
             }
         }
 
-        private List<SelectListItem> GetStartingCities()
+        protected ViewResult View(CharacterCreationViewModel model)
         {
-            var startingCities = new List<SelectListItem>();
-            var cityNames = this._cityService.GetCityNames();
+            model.StartingCities = ViewUtil.ToOptionList(this._cityService.GetCities(), city => city.Name);
 
-            foreach(var name in cityNames)
-            {
-                startingCities.Add(new SelectListItem { Text = name });
-            }
-
-            return startingCities;
+            return base.View(model);
         }
     }
 }

@@ -34,8 +34,8 @@ namespace MafiaGame.Services.impl
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForAStore(),
                     Activities = new Dictionary<string, string> {
-                        { "rob", "/activities/store/rob" },
-                        { "buy something", "/activities/store/buy" },
+                        { "rob", "/store/rob" },
+                        { "buy something", "/store/buy" },
                     }
                 });
             }
@@ -50,7 +50,7 @@ namespace MafiaGame.Services.impl
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForABank(),
                     Activities = new Dictionary<string, string> {
-                        { "rob", "/activities/bank/rob" },
+                        { "rob", "/bank/rob" },
                     }
                 });
             }
@@ -65,7 +65,7 @@ namespace MafiaGame.Services.impl
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForAPoliceStation(),
                     Activities = new Dictionary<string, string> {
-                        { "bribe the cops", "/activities/policestation/bribe" },
+                        { "bribe the cops", "/policestation/bribe" },
                     }
                 });
             }
@@ -77,7 +77,7 @@ namespace MafiaGame.Services.impl
                 Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                 Name = _nameGenService.GetNextNameForAnAirport(),
                 Activities = new Dictionary<string, string> {
-                    { "travel", "/activities/airport/travel" },
+                    { "travel", "/airport/travel" },
                 }
             });
 

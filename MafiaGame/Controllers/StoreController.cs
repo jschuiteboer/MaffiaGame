@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace MafiaGame.Controllers.Resources
+namespace MafiaGame.Controllers.Activities
 {
     public class StoreController : Controller
     {
