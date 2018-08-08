@@ -10,16 +10,9 @@
 <div class="row">
     <div class="mainbar col-md-8">
 
-        <div id="map-panel" class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Map</h3>
-            </div>
-            <div class="panel-body">
-                @Html.Partial("_Map", map, new ViewDataDictionary {
-                    { "playerPosition", player.CurrentTile },
-                })
-            </div>
-        </div>
+        @Html.Partial("_Map", map, new ViewDataDictionary {
+            { "playerPosition", player.CurrentTile },
+        })
 
     </div>
     <div class="sidebar col-md-4">
