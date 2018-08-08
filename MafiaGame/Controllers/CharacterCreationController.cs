@@ -32,9 +32,7 @@ namespace MafiaGame.Controllers
             }
             else
             {
-                PlayerEntity player = this._playerService.GetCurrent();
-                player.Name = model.Name;
-                player.City = this._cityService.GetCityFromName(model.SelectedStartingCity);
+                this._playerService.InitPlayer(model.Name, model.SelectedStartingCity);
 
                 return RedirectToAction(null, "MainGame");
             }

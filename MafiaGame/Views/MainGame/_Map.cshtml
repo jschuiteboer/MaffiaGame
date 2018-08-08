@@ -1,27 +1,40 @@
-﻿@model MafiaGame.Models.Map
+﻿@using MafiaGame.Models
 
-<svg id="map" class="map" viewBox="-50 -33 100 66" xmlns="http://www.w3.org/2000/svg">
-    @foreach (var link in Model.TileLinks)
-    {
-        <line
-            class="tile-link"
-            x1="@link.Key.Position.X"
-            y1="@link.Key.Position.Y"
-            x2="@link.Value.Position.X"
-            y2="@link.Value.Position.Y"
-            stroke="#000"
-            stroke-width="3"
-        />
-    }
+@model Map
 
-    @foreach (var tile in Model.TileList)
-    {
-        <circle
-            class="tile @tile.Type"
-            cx="@tile.Position.X"
-            cy="@tile.Position.Y"
-            r="3"
-            data-tile="@Newtonsoft.Json.JsonConvert.SerializeObject(tile)"
-        />
-    }
+@{
+    Tile playerPosition = (Tile) ViewData["playerPosition"];
+}
+
+<svg id="map" class="map" viewBox="@(playerPosition.Position.X - 50) @(playerPosition.Position.Y - 33) 100 66" xmlns="http://www.w3.org/2000/svg">
+    <g id="camera-offset">
+        @foreach (var link in Model.TileLinks)
+        {
+            <line class="tile-link"
+                  x1="@link.Key.Position.X"
+                  y1="@link.Key.Position.Y"
+                  x2="@link.Value.Position.X"
+                  y2="@link.Value.Position.Y"
+                  stroke="#000"
+                  stroke-width="3" />
+        }
+
+        @foreach (var tile in Model.TileList)
+        {
+            var clazz = "tile";
+
+            if (tile.Equals(playerPosition))
+            {
+                clazz += " current";
+            }
+
+            clazz += " " + tile.Type;
+
+            <circle class="@clazz"
+                    cx="@tile.Position.X"
+                    cy="@tile.Position.Y"
+                    r="3"
+                    data-tile="@Newtonsoft.Json.JsonConvert.SerializeObject(tile)" />
+        }
+    </g>
 </svg>

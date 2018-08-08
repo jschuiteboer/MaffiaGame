@@ -32,10 +32,11 @@ namespace MafiaGame.Controllers.Activities
             }
             else
             {
-                // TODO: move this logic to a service
-                PlayerEntity player = this._playerService.GetCurrent();
-                player.City = this._cityService.GetCityFromName(model.SelectedCity);
+                PlayerEntity currentPlayer = this._playerService.GetCurrent();
+                City selectedCity = this._cityService.GetCityFromName(model.SelectedCity);
 
+                this._playerService.TravelToCity(currentPlayer, selectedCity);
+                
                 return RedirectToAction("", "MainGame");
             }
         }

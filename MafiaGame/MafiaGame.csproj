@@ -246,6 +246,8 @@
     <Content Include="Views\MainGame\_Map.cshtml" />
     <Content Include="Views\Store\Rob.cshtml" />
     <Content Include="Views\Airport\Travel.cshtml" />
+    <Content Include="Views\MainGame\_TileInfo.cshtml" />
+    <Content Include="Views\MainGame\_CharacterInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Inventory\" />

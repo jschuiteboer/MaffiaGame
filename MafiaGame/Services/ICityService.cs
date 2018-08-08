@@ -1,6 +1,5 @@
 ﻿using MafiaGame.Models;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace MafiaGame.Services
 {
@@ -11,5 +10,7 @@ namespace MafiaGame.Services
         City GetCityFromName(string name);
 
         IList<City> GetConnectedCities(City city);
+
+        Tile GetAirportTile(City city);
     }
 }

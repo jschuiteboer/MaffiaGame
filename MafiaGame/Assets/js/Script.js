@@ -1,39 +1,47 @@
-﻿function showTileInfo(element) {
-    var panel = $('#tile-info-panel');
-    var tile = $(element).data('tile');
-    var activitiesList = panel.find('#activities');
-    var listItem = activitiesList.find('li').first();
+﻿$(function() {
+    const mapElement = $('#map');
+    const tileInfoPanelElement = $('#tile-info-panel');
 
-    panel.removeClass('hidden');
+    function showTileInfo(tileElement) {
+        var tile = $(tileElement).data('tile');
+        var activitiesList = tileInfoPanelElement.find('#activities');
+        var listItem = activitiesList.find('li').first();
 
-    panel.find('#name').text(tile.Name);
-    panel.find('#type').text(tile.Type);
+        tileInfoPanelElement.removeClass('hidden');
 
-    activitiesList.empty();
+        tileInfoPanelElement.find('#name').text(tile.Name);
+        tileInfoPanelElement.find('#type').text(tile.Type);
 
-    for(var activity in tile.Activities) {
-        listItem.find('#activity')
-            .text(activity)
-            .attr("href", tile.Activities[activity]);
+        activitiesList.empty();
 
-        listItem.clone().appendTo(activitiesList);
+        for(var activity in tile.Activities) {
+            listItem.find('#activity')
+                .text(activity)
+                .attr("href", tile.Activities[activity]);
+
+            listItem.clone().appendTo(activitiesList);
+        }
     }
-}
 
-$(function() {
-    $('#map circle').click(function() {
+    function setCameraPosition(x, y) {
+        mapElement.find('#camera-offset')
+            .attr('transform', 'translate(' + x + ',' + y + ')');
+    }
+
+    var camPos = { x: 0, y: 0 };
+
+    mapElement.find('.tile').click(function() {
         showTileInfo(this);
     });
     
-    $('#map').on('mousemove', function(e) {
+    mapElement.on('mousemove', function(e) {
         if(e.buttons) {
-            var elem = $(this);
-            var viewBox = elem.attr('viewBox').match(/\S+/g);
+            camPos.x += e.originalEvent.movementX;
+            camPos.y += e.originalEvent.movementY;
 
-            viewBox[0] = Number(viewBox[0]) - e.originalEvent.movementX / (elem.width() / Number(viewBox[2]));
-            viewBox[1] = Number(viewBox[1]) - e.originalEvent.movementY / (elem.height() / Number(viewBox[3]));
-            
-            $(this).attr('viewBox', viewBox.join(' '));
+            setCameraPosition(camPos.x, camPos.y);
         }
     });
+
+    showTileInfo($('#map .tile.current').first());
 });

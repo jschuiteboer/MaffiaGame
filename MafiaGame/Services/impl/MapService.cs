@@ -7,6 +7,11 @@ namespace MafiaGame.Services.impl
 {
     public class MapService : IMapService
     {
+        public readonly string TILE_TYPE_STORE = "Store";
+        public readonly string TILE_TYPE_BANK = "Bank";
+        public readonly string TILE_TYPE_POLICESTATION = "PoliceStation";
+        public readonly string TILE_TYPE_AIRPORT = "Airport";
+
         private INameGenService _nameGenService;
 
         public MapService(INameGenService nameGenService)
@@ -30,7 +35,7 @@ namespace MafiaGame.Services.impl
             {
                 map.TileList.Add(new Tile()
                 {
-                    Type = "Store",
+                    Type = TILE_TYPE_STORE,
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForAStore(),
                     Activities = new Dictionary<string, string> {
@@ -46,7 +51,7 @@ namespace MafiaGame.Services.impl
             {
                 map.TileList.Add(new Tile()
                 {
-                    Type = "Bank",
+                    Type = TILE_TYPE_BANK,
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForABank(),
                     Activities = new Dictionary<string, string> {
@@ -61,7 +66,7 @@ namespace MafiaGame.Services.impl
             {
                 map.TileList.Add(new Tile()
                 {
-                    Type = "PoliceStation",
+                    Type = TILE_TYPE_POLICESTATION,
                     Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                     Name = _nameGenService.GetNextNameForAPoliceStation(),
                     Activities = new Dictionary<string, string> {
@@ -73,7 +78,7 @@ namespace MafiaGame.Services.impl
             // add airport tiles
             map.TileList.Add(new Tile()
             {
-                Type = "Airport",
+                Type = TILE_TYPE_AIRPORT,
                 Position = new Point(random.Next(minX, maxX), random.Next(minY, maxY)),
                 Name = _nameGenService.GetNextNameForAnAirport(),
                 Activities = new Dictionary<string, string> {
@@ -93,6 +98,19 @@ namespace MafiaGame.Services.impl
             }
 
             return map;
+        }
+
+        public Tile GetAirPortTile(Map map)
+        {
+            foreach(Tile tile in map.TileList)
+            {
+                if(tile.Type.Equals(TILE_TYPE_AIRPORT))
+                {
+                    return tile;
+                }
+            }
+
+            return null;
         }
     }
 }

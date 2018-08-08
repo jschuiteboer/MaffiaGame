@@ -1,0 +1,19 @@
+﻿@model MafiaGame.Models.PlayerEntity
+
+<div id="character-info-panel" class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Character Info</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="list-unstyled">
+            <li class="row">
+                <label class="col-sm-4">Name</label>
+                <span class="col-sm-8">@Model.Name</span>
+            </li>
+            <li class="row">
+                <label class="col-sm-4">City</label>
+                <span class="col-sm-8">@Model.City.Name</span>
+            </li>
+        </ul>
+    </div>
+</div>
