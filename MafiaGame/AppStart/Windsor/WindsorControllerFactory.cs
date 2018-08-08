@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.MicroKernel;
 
-namespace MafiaGame.App_Start
+namespace MafiaGame.Windsor
 {
     internal class WindsorControllerFactory : DefaultControllerFactory
     {

@@ -1,10 +1,11 @@
 ﻿using Castle.Windsor;
 using Castle.Windsor.Installer;
+using MafiaGame.Windsor;
 using System.Web.Mvc;
 
-namespace MafiaGame.App_Start
+namespace MafiaGame
 {
-    public class WindsorContainerHandler
+    public static class WindsorContainerHandler
     {
         private static IWindsorContainer container;
 

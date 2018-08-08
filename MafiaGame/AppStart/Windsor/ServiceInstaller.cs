@@ -1,17 +1,17 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using System.Web.Mvc;
 
-namespace MafiaGame.App_Start
+namespace MafiaGame.Windsor
 {
-    public class ControllerInstaller : IWindsorInstaller
+    public class ServiceInstaller : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(
                 Classes.FromThisAssembly()
-                    .BasedOn<IController>()
+                    .InNamespace("MafiaGame.Services.impl")
+                    .WithServiceFirstInterface()
                     .LifestylePerWebRequest()
             );
         }
