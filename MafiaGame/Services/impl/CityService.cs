@@ -22,7 +22,7 @@ namespace MafiaGame.Services.impl
             };
         }
 
-        public List<string> GetCityNames()
+        public IList<string> GetCityNames()
         {
             if(_cityNames == null)
             {
@@ -35,10 +35,10 @@ namespace MafiaGame.Services.impl
 
             return _cityNames;
         }
-
-        public List<City> GetCities()
+        
+        public IReadOnlyCollection<City> GetCities()
         {
-            return this._cities;
+            return this._cities.AsReadOnly();
         }
 
         public City GetCityFromName(string name)
@@ -52,6 +52,18 @@ namespace MafiaGame.Services.impl
             }
 
             throw new ArgumentException("not a valid city: " + name);
+        }
+
+        public IList<City> GetConnectedCities(City city)
+        {
+            Validation.RequireNonNull(city, "city");
+
+            List<City> connectedCities = new List<City>(this.GetCities());
+            
+            // TODO: make city comparable
+            connectedCities.Remove(city);
+
+            return connectedCities;
         }
     }
 }
