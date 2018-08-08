@@ -6,8 +6,6 @@ namespace MafiaGame.Services
 {
     public interface ICityService
     {
-        IList<string> GetCityNames();
-
         IReadOnlyCollection<City> GetCities();
 
         City GetCityFromName(string name);

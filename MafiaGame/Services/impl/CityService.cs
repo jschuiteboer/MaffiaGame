@@ -8,8 +8,6 @@ namespace MafiaGame.Services.impl
     {
         private List<City> _cities;
 
-        private List<string> _cityNames;
-
         public CityService(IMapService mapService)
         {
             this._cities = new List<City> {
@@ -20,20 +18,6 @@ namespace MafiaGame.Services.impl
                 new City("Repenburg", mapService.CreateMapFromSeed(247)),
                 new City("Richminster", mapService.CreateMapFromSeed(3457)),
             };
-        }
-
-        public IList<string> GetCityNames()
-        {
-            if(_cityNames == null)
-            {
-                _cityNames = new List<string>();
-                foreach (City city in this._cities)
-                {
-                    this._cityNames.Add(city.Name);
-                }
-            }
-
-            return _cityNames;
         }
         
         public IReadOnlyCollection<City> GetCities()
@@ -51,7 +35,7 @@ namespace MafiaGame.Services.impl
                 }
             }
 
-            throw new ArgumentException("not a valid city: " + name);
+            throw new ArgumentException("not a valid city name: '" + name + "'");
         }
 
         public IList<City> GetConnectedCities(City city)
