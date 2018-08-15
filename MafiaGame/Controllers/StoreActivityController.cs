@@ -2,7 +2,8 @@
 
 namespace MafiaGame.Controllers.Activities
 {
-    public class StoreController : Controller
+    [Activity]
+    public class StoreActivityController : Controller
     {
         public ActionResult Rob()
         {

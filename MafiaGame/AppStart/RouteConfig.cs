@@ -9,8 +9,8 @@ namespace MafiaGame
         {
             routes.MapRoute(
                 name: null,
-                url: "{controller}/{action}",
-                defaults: new { controller = "Home", action = "Index" }
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -6,12 +6,13 @@ using System.Web.Mvc;
 
 namespace MafiaGame.Controllers.Activities
 {
-    public class AirportController : Controller
+    [Activity]
+    public class AirportActivityController : Controller
     {
         private IPlayerService _playerService;
         private ICityService _cityService;
 
-        public AirportController(IPlayerService playerService, ICityService cityService)
+        public AirportActivityController(IPlayerService playerService, ICityService cityService)
         {
             this._playerService = playerService;
             this._cityService = cityService;
@@ -19,7 +20,6 @@ namespace MafiaGame.Controllers.Activities
 
         public ActionResult Travel()
         {
-
             return View(new AirportViewModel());
         }
         
