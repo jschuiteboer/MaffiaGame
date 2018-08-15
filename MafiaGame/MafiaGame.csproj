@@ -162,7 +162,7 @@
     <Compile Include="AppStart\WindsorContainerHandler.cs" />
     <Compile Include="AppStart\RouteConfig.cs" />
     <Compile Include="AppStart\Windsor\WindsorControllerFactory.cs" />
-    <Compile Include="Controllers\ActivityFilterAttribute.cs" />
+    <Compile Include="Controllers\Filters\ActivityFilterAttribute.cs" />
     <Compile Include="Controllers\AirportActivityController.cs" />
     <Compile Include="Controllers\StoreActivityController.cs" />
     <Compile Include="Controllers\CharacterCreationController.cs" />
@@ -187,6 +187,8 @@
     <Compile Include="Models\World.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\impl\NameGenService.cs" />
+    <Compile Include="Services\impl\TileService.cs" />
+    <Compile Include="Services\ITileService.cs" />
     <Compile Include="Util\Validation.cs" />
     <Compile Include="Services\INameGenService.cs" />
     <Compile Include="Services\IItemService.cs" />

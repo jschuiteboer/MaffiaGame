@@ -7,19 +7,30 @@ namespace MafiaGame
 {
     public static class WindsorContainerHandler
     {
-        private static IWindsorContainer container;
+        private static IWindsorContainer _container;
+
+        public static IWindsorContainer Container
+        {
+            get
+            {
+                if(_container == null)
+                {
+                    _container = new WindsorContainer().Install(FromAssembly.This());
+                }
+
+                return _container;
+            }
+        }
+
 
         public static void Setup()
         {
-            container = new WindsorContainer()
-                .Install(FromAssembly.This());
-            
-            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container.Kernel));
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(Container.Kernel));
         }
 
         public static void Dispose()
         {
-            container.Dispose();
+            _container.Dispose();
         }
     }
 }
